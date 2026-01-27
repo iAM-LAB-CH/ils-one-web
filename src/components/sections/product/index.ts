@@ -1,0 +1,11 @@
+export { HeroSection } from './HeroSection';
+export { HighlightsSection } from './HighlightsSection';
+export { DesignSection } from './DesignSection';
+export { SecuritySection } from './SecuritySection';
+export { FeaturesSection } from './FeaturesSection';
+export { PerformanceSection } from './PerformanceSection';
+export { ComparisonSection } from './ComparisonSection';
+export { SpecsSection } from './SpecsSection';
+export { PricingSection } from './PricingSection';
+export { CTAFooterSection } from './CTAFooterSection';
+export { StickyNavSection } from './StickyNavSection';
