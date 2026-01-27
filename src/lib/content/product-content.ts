@@ -174,19 +174,19 @@ export const productContent: ProductPageContent = {
       {
         title: 'Smart-Contract Templates',
         description: 'Create legally aligned agreements through guided click-through templates and deploy them on-chain with built-in controls.',
-        image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
+        image: '/images/infrastructure/sc-templates.png',
         imageAlt: 'Smart contract templates interface',
       },
       {
         title: 'Institutional DeFi, selectively applied',
-        description: 'Integrate with EVM blockchains, stablecoins and institutional yield strategies — only where they add real value.',
-        image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=800&q=80',
+        description: 'Integrate with EVM blockchains, stablecoins and institutional yield strategies — where they add real value.',
+        image: '/images/infrastructure/yield.png',
         imageAlt: 'DeFi integrations',
       },
       {
         title: 'Auditability by default',
         description: 'Every action, approval and cashflow is traceable, timestamped and verifiable on-chain.',
-        image: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=800&q=80',
+        image: '/images/infrastructure/activity3.png',
         imageAlt: 'Audit trail visualization',
       },
     ],
@@ -252,7 +252,7 @@ export const productContent: ProductPageContent = {
         headline: 'Institutional Marketplace',
         subheadline: 'Trade ILS positions without breaking structure',
         description: 'Enable controlled secondary trading of ILS agreements while preserving governance, compliance and transparency.',
-        image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80',
+        image: '/images/platform/marketplace.png',
         imageAlt: 'Marketplace interface',
         highlights: [
           'Secondary market access',
@@ -267,7 +267,7 @@ export const productContent: ProductPageContent = {
         headline: 'Institutional Transactions',
         subheadline: 'Secure every transfer through multi-signature control',
         description: 'Self-custodial, role-based wallets designed for institutional workflows — not retail crypto UX.',
-        image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80',
+        image: '/images/platform/institutional-tx.png',
         imageAlt: 'Transaction management interface',
         highlights: [
           'Regulator-ready approvals',
@@ -282,7 +282,7 @@ export const productContent: ProductPageContent = {
         headline: 'Product Configurator',
         subheadline: 'Build deals from click-through templates',
         description: 'Turn legal agreements into executable smart contracts. Define triggers, roles, termination logic, run-off mechanics and settlement rules — without bespoke development.',
-        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80',
+        image: '/images/platform/product-config.png',
         imageAlt: 'Product configurator interface',
         highlights: [
           'Template-based deal creation',
@@ -297,7 +297,7 @@ export const productContent: ProductPageContent = {
         headline: 'Role-Based Interactions',
         subheadline: 'Pre-configured actions by role',
         description: 'Assign and enforce who can do what — directly at protocol level.',
-        image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+        image: '/images/platform/roles.png',
         imageAlt: 'Role management interface',
         highlights: [
           'Role-guarded actions',
