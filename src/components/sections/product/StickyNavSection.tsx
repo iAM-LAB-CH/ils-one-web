@@ -1,12 +1,13 @@
 'use client';
 
 import { StickyNav } from '@/components/ui';
-import type { NavItem } from '@/lib/types/content';
+import type { MainNavigation } from '@/lib/types/content';
 
 interface StickyNavSectionProps {
-  items: NavItem[];
+  navigation: MainNavigation;
+  onContactClick?: () => void;
 }
 
-export function StickyNavSection({ items }: StickyNavSectionProps) {
-  return <StickyNav items={items} showProgress={true} />;
+export function StickyNavSection({ navigation, onContactClick }: StickyNavSectionProps) {
+  return <StickyNav navigation={navigation} onContactClick={onContactClick} />;
 }

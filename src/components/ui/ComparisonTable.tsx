@@ -9,7 +9,11 @@ import clsx from 'clsx';
 interface ComparisonTableProps {
   tiers: PricingTier[];
   className?: string;
+  onContactClick?: () => void;
 }
+
+// CTAs that should open the contact modal
+const MODAL_CTA_TEXTS = ['Request Walkthrough', 'Contact Sales'];
 
 function CheckIcon({ className }: { className?: string }) {
   return (
@@ -23,7 +27,7 @@ function DashIcon({ className }: { className?: string }) {
   return <span className={clsx('block w-2 h-0.5 bg-current', className)} />;
 }
 
-export function ComparisonTable({ tiers, className = '' }: ComparisonTableProps) {
+export function ComparisonTable({ tiers, className = '', onContactClick }: ComparisonTableProps) {
   return (
     <div className={clsx('grid gap-6', className)}>
       {/* Mobile: Stack cards */}
@@ -84,13 +88,23 @@ export function ComparisonTable({ tiers, className = '' }: ComparisonTableProps)
                 ))}
               </ul>
 
-              <Button
-                href={tier.cta.href}
-                variant={tier.highlighted ? 'primary' : 'secondary'}
-                className="w-full"
-              >
-                {tier.cta.text}
-              </Button>
+              {MODAL_CTA_TEXTS.includes(tier.cta.text) ? (
+                <Button
+                  onClick={onContactClick}
+                  variant={tier.highlighted ? 'primary' : 'secondary'}
+                  className="w-full"
+                >
+                  {tier.cta.text}
+                </Button>
+              ) : (
+                <Button
+                  href={tier.cta.href}
+                  variant={tier.highlighted ? 'primary' : 'secondary'}
+                  className="w-full"
+                >
+                  {tier.cta.text}
+                </Button>
+              )}
             </div>
           </RevealOnScroll>
         ))}
@@ -157,14 +171,25 @@ export function ComparisonTable({ tiers, className = '' }: ComparisonTableProps)
                 ))}
               </ul>
 
-              <Button
-                href={tier.cta.href}
-                variant={tier.highlighted ? 'primary' : 'secondary'}
-                size="lg"
-                className="w-full"
-              >
-                {tier.cta.text}
-              </Button>
+              {MODAL_CTA_TEXTS.includes(tier.cta.text) ? (
+                <Button
+                  onClick={onContactClick}
+                  variant={tier.highlighted ? 'primary' : 'secondary'}
+                  size="lg"
+                  className="w-full"
+                >
+                  {tier.cta.text}
+                </Button>
+              ) : (
+                <Button
+                  href={tier.cta.href}
+                  variant={tier.highlighted ? 'primary' : 'secondary'}
+                  size="lg"
+                  className="w-full"
+                >
+                  {tier.cta.text}
+                </Button>
+              )}
             </div>
           </RevealOnScroll>
         ))}

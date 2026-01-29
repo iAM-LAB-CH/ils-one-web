@@ -1,58 +1,104 @@
+'use client';
+
+import { useState } from 'react';
 import {
   HeroSection,
   HighlightsSection,
-  DesignSection,
-  SecuritySection,
   FeaturesSection,
   PerformanceSection,
+  DesignSection,
+  SecuritySection,
+  AudienceSection,
   ComparisonSection,
+  TeamSection,
   SpecsSection,
-  PricingSection,
-  CTAFooterSection,
+  FooterSection,
   StickyNavSection,
 } from '@/components/sections/product';
+import { ContactModal } from '@/components/ui';
 import { productContent } from '@/lib/content/product-content';
 
-export const metadata = {
-  title: 'ILS One – Programmable Reinsurance',
-  description: 'On-chain infrastructure for institutional ILS. Automate collateral, settlement, lifecycle management and secondary trading — without changing your legal structure.',
-};
-
 export default function Home() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const handleContactClick = () => {
+    setIsContactModalOpen(true);
+  };
+
   return (
     <main className="relative">
       {/* Sticky Navigation */}
-      <StickyNavSection items={productContent.navigation} />
+      <StickyNavSection 
+        navigation={productContent.mainNavigation} 
+        onContactClick={handleContactClick}
+      />
 
-      {/* Hero Section */}
-      <HeroSection content={productContent.hero} />
+      {/* 1. Hero Section */}
+      <HeroSection content={productContent.hero} onContactClick={handleContactClick} />
 
-      {/* Highlights Gallery */}
+      {/* 2. Who Is It For */}
+      {productContent.audience && (
+        <AudienceSection content={productContent.audience} />
+      )}
+
+      {/* 3. Highlights Gallery */}
       <HighlightsSection content={productContent.highlights} />
 
-      {/* Infrastructure Section (formerly Design) */}
-      <DesignSection content={productContent.design} />
-
-      {/* Security Section */}
-      <SecuritySection content={productContent.security} />
-
-      {/* Platform Features Deep-Dive */}
+      {/* 4. Platform Features Deep-Dive */}
       <FeaturesSection content={productContent.features} />
 
-      {/* Performance Section */}
+      {/* 5. Product in Numbers (Performance) */}
       <PerformanceSection content={productContent.performance} />
 
-      {/* Pricing Comparison */}
-      <ComparisonSection content={productContent.comparison} />
+      {/* 6. Infrastructure Section */}
+      <DesignSection content={productContent.design} />
 
-      {/* FAQ Section (formerly Specs) */}
+      {/* 7. Security Section */}
+      <SecuritySection content={productContent.security} />
+
+      {/* 8. Pricing Comparison */}
+      <ComparisonSection content={productContent.comparison} onContactClick={handleContactClick} />
+
+      {/* 9. Team / Vision / Mission */}
+      {productContent.team && (
+        <TeamSection content={productContent.team} />
+      )}
+
+      {/* 10. FAQ Section */}
       <SpecsSection content={productContent.specs} />
 
-      {/* Pricing CTA Section */}
-      <PricingSection content={productContent.pricing} />
+      {/* 11. CTA + Footer */}
+      {productContent.footer ? (
+        <FooterSection 
+          ctaContent={productContent.ctaFooter} 
+          footerContent={productContent.footer}
+          onContactClick={handleContactClick}
+        />
+      ) : (
+        <FooterSection 
+          ctaContent={productContent.ctaFooter} 
+          footerContent={{
+            company: {
+              name: 'Invest One AG',
+              legalEntity: 'Swiss Corporation (AG)',
+              address: 'Löwenstrasse 29, 8001 Zürich, Switzerland',
+              email: 'info@ils-one.com',
+            },
+            links: {
+              impressum: '/impressum',
+              privacy: '/privacy',
+            },
+          }}
+          onContactClick={handleContactClick}
+        />
+      )}
 
-      {/* CTA Footer */}
-      <CTAFooterSection content={productContent.ctaFooter} />
+      {/* Contact Modal with Google Calendar Scheduler */}
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        title="Schedule a Walkthrough"
+      />
     </main>
   );
 }

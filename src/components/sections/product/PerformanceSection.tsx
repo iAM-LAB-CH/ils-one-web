@@ -73,30 +73,30 @@ export function PerformanceSection({ content }: PerformanceSectionProps) {
                     <span className="text-dark-500">{comparison.unit}</span>
                   </div>
                   <div className="space-y-2">
-                    {/* Our product */}
+                    {/* ILS One */}
                     <div className="flex items-center gap-3">
-                      <span className="text-xs text-dark-400 w-20">AppName Pro</span>
+                      <span className="text-xs text-dark-400 w-28">ILS One</span>
                       <div className="flex-1 h-3 bg-dark-800 rounded-full overflow-hidden">
                         <div
                           className="h-full bg-gradient-to-r from-accent-500 to-accent-400 rounded-full transition-all duration-1000"
                           style={{ width: `${comparison.ourValue}%` }}
                         />
                       </div>
-                      <span className="text-sm font-semibold text-accent-400 w-12 text-right">
-                        {comparison.ourValue}%
+                      <span className="text-sm font-semibold text-accent-400 w-16 text-right">
+                        {comparison.ourDisplay || `${comparison.ourValue}%`}
                       </span>
                     </div>
-                    {/* Competitor */}
+                    {/* Traditional */}
                     <div className="flex items-center gap-3">
-                      <span className="text-xs text-dark-500 w-20">Industry Avg</span>
+                      <span className="text-xs text-dark-500 w-28">Traditional</span>
                       <div className="flex-1 h-3 bg-dark-800 rounded-full overflow-hidden">
                         <div
                           className="h-full bg-dark-600 rounded-full transition-all duration-1000"
                           style={{ width: `${comparison.competitorValue}%` }}
                         />
                       </div>
-                      <span className="text-sm text-dark-500 w-12 text-right">
-                        {comparison.competitorValue}%
+                      <span className="text-sm text-dark-500 w-16 text-right">
+                        {comparison.competitorDisplay || `${comparison.competitorValue}%`}
                       </span>
                     </div>
                   </div>

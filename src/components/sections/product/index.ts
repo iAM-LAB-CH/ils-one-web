@@ -9,3 +9,6 @@ export { SpecsSection } from './SpecsSection';
 export { PricingSection } from './PricingSection';
 export { CTAFooterSection } from './CTAFooterSection';
 export { StickyNavSection } from './StickyNavSection';
+export { AudienceSection } from './AudienceSection';
+export { TeamSection } from './TeamSection';
+export { FooterSection } from './FooterSection';

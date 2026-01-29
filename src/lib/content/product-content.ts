@@ -1,18 +1,56 @@
 import type { ProductPageContent } from '@/lib/types/content';
 
 export const productContent: ProductPageContent = {
-  hero: {
-    badge: 'On-chain. Institutional-grade governance.',
-    headline: 'ILS One',
-    subheadline: 'Programmable Reinsurance',
-    description: 'Move from PDFs, spreadsheets and fragmented intermediaries\nto automated treaties, real-time settlement and programmable liquidity.',
-    primaryCta: {
+  mainNavigation: {
+    logo: {
+      text: 'ILS One',
+      href: '/',
+    },
+    categories: [
+      {
+        id: 'functionality',
+        label: 'Functionality',
+        items: [
+          { id: 'highlights', label: 'Highlights', href: '#highlights', description: 'Key platform capabilities' },
+          { id: 'platform', label: 'Platform', href: '#features', description: 'Full-lifecycle ILS tools' },
+          { id: 'numbers', label: 'Product in Numbers', href: '#performance', description: 'Operational impact metrics' },
+          { id: 'infrastructure', label: 'Infrastructure', href: '#design', description: 'Technical architecture' },
+          { id: 'security', label: 'Security', href: '#security', description: 'Enterprise-grade protection' },
+        ],
+      },
+      {
+        id: 'company',
+        label: 'Company',
+        items: [
+          { id: 'team', label: 'Team', href: '#team', description: 'Meet the people behind ILS One' },
+          { id: 'vision', label: 'Vision & Mission', href: '#team', description: 'Our long-term commitment' },
+        ],
+      },
+      {
+        id: 'contact',
+        label: 'Contact',
+        href: '#contact',
+        action: 'modal',
+      },
+    ],
+    cta: {
       text: 'Launch App',
       href: 'https://ils.dev.iam-lab.ch',
     },
-    secondaryCta: {
+  },
+
+  hero: {
+    badge: 'Institutional Platform. On-Chain.',
+    headline: 'ILS One',
+    subheadline: 'Platform for Programmable Reinsurance',
+    description: 'ILS One is a full lifecycle platform for Institutional Investors, Reinsurers, Brokers and Agents to transform insurance-linked securities into programmable on-chain instruments.',
+    primaryCta: {
       text: 'Request Walkthrough',
-      href: '/demo',
+      href: '#contact',
+    },
+    secondaryCta: {
+      text: 'Launch App',
+      href: 'https://ils.dev.iam-lab.ch',
     },
     productCards: [
       {
@@ -72,14 +110,12 @@ export const productContent: ProductPageContent = {
       headline: 'Trusted by institutional leaders',
       subheadline: 'ILS One powers on-chain insurance-linked securities for leading asset managers, reinsurers and service providers',
       institutions: [
-        'Alpine Re',
-        'Swiss ILS',
-        'Evergreen Capital',
-        'Zürich Markets',
-        'Bermuda Cat',
-        'Munich Risk',
-        'Atlantic Partners',
-        'Pacific Reinsurance',
+        { name: 'Hannover Re', logo: '/images/logos/HannoverRe.svg' },
+        { name: 'Schroders', logo: '/images/logos/Schroders.png' },
+        { name: 'Aon', logo: '/images/logos/AON.png' },
+        { name: 'Hannover Re', logo: '/images/logos/HannoverRe.svg' },
+        { name: 'Schroders', logo: '/images/logos/Schroders.png' },
+        { name: 'Aon', logo: '/images/logos/AON.png' },
       ],
     },
   },
@@ -97,8 +133,8 @@ export const productContent: ProductPageContent = {
   ],
 
   highlights: {
-    headline: 'What makes ILS One different',
-    subheadline: 'Experience what programmable reinsurance actually feels like',
+    headline: 'Programmable Reinsurance in Action',
+    subheadline: 'Experience what efficiency feels like',
     tabs: [
       {
         id: 'governance',
@@ -179,7 +215,7 @@ export const productContent: ProductPageContent = {
       },
       {
         title: 'Institutional DeFi, selectively applied',
-        description: 'Integrate with EVM blockchains, stablecoins and institutional yield strategies — where they add real value.',
+        description: 'Integrate with Ethereum-based blockchains (EVM-compatible networks), stablecoins and institutional yield strategies — where they add real value.',
         image: '/images/infrastructure/yield.png',
         imageAlt: 'DeFi integrations',
       },
@@ -198,22 +234,18 @@ export const productContent: ProductPageContent = {
     description: 'Security is embedded at every layer — from audited smart contracts to continuous monitoring. We meet the standards institutions demand.',
     credentials: [
       {
-        id: 'quantstamp',
+        id: 'audits',
         icon: 'audit',
-        title: 'Quantstamp Audited',
-        description: 'Smart contracts independently audited by Quantstamp, the gold standard in blockchain security. Every line of code reviewed for vulnerabilities, logic errors and attack vectors.',
+        title: 'Tier-1 Security Audits',
+        description: 'Smart contracts independently audited by leading blockchain security firms. Every line of code reviewed for vulnerabilities, logic errors and attack vectors. Audit reports available on request.',
         badge: 'Verified',
-        link: {
-          text: 'View Audit Report',
-          href: '#',
-        },
       },
       {
         id: 'pentest',
         icon: 'shield',
-        title: 'Annual Penetration Testing',
-        description: 'Application and UI undergo comprehensive penetration testing annually by certified security professionals. OWASP Top 10 coverage and beyond.',
-        badge: 'Annual',
+        title: 'Regular Security Testing',
+        description: 'Application and UI undergo comprehensive penetration testing by certified security professionals. OWASP Top 10 coverage and beyond.',
+        badge: 'Ongoing',
       },
       {
         id: 'non-custodial',
@@ -311,31 +343,33 @@ export const productContent: ProductPageContent = {
   },
 
   performance: {
-    headline: 'Designed for operational efficiency',
-    subheadline: 'Reduce friction, cost and settlement time',
+    headline: 'Product in Numbers',
+    subheadline: 'Real operational impact, measurable results',
     engineName: 'ILS Vault Engine',
     engineDescription: 'A modular smart-contract architecture built for long-dated, multi-party financial products.',
     stats: [
       {
-        id: 'speed',
-        value: 10,
+        id: 'settlement',
+        value: 100,
         suffix: 'x',
-        label: 'Faster',
-        description: 'Settlement compared to traditional',
+        prefix: '',
+        label: 'Faster Settlement',
+        description: 'Down from 96 hours to 12 seconds',
       },
       {
         id: 'cost',
-        value: 50,
-        suffix: '%',
-        label: 'Lower Costs',
-        description: 'Operational overhead reduction',
+        value: 10,
+        suffix: 'x',
+        prefix: '',
+        label: 'Less Costs',
+        description: 'Reduced to 1% from 10% operational overhead',
       },
       {
-        id: 'uptime',
-        value: 99.9,
-        suffix: '%',
-        label: 'Uptime',
-        description: 'Enterprise reliability guaranteed',
+        id: 'liquidity',
+        value: 24,
+        suffix: '/7',
+        label: 'Liquidity',
+        description: 'Deposit, Redeem or Trade anytime',
       },
       {
         id: 'audit',
@@ -347,29 +381,35 @@ export const productContent: ProductPageContent = {
     ],
     comparisons: [
       {
-        label: 'Settlement Time',
-        ourValue: 95,
-        competitorValue: 45,
-        unit: 'faster',
+        label: 'Settlement Speed',
+        ourValue: 99,
+        ourDisplay: '12s',
+        competitorValue: 1,
+        competitorDisplay: '96h',
+        unit: 'time to settle',
       },
       {
         label: 'Operational Cost',
-        ourValue: 85,
-        competitorValue: 40,
-        unit: 'lower',
+        ourValue: 10,
+        ourDisplay: '~1%',
+        competitorValue: 100,
+        competitorDisplay: '~10%',
+        unit: 'of transaction',
       },
       {
         label: 'Audit Readiness',
-        ourValue: 98,
+        ourValue: 100,
+        ourDisplay: '100%',
         competitorValue: 52,
-        unit: 'score',
+        competitorDisplay: '52%',
+        unit: 'traceability',
       },
     ],
   },
 
   comparison: {
-    headline: 'No AUM-based pricing. No surprises.',
-    subheadline: 'Infrastructure pricing — not asset rent-seeking',
+    headline: 'Pay-per-transaction.',
+    subheadline: 'No asset-based pricing. Fee structure is immutable once live.',
     tiers: [
       {
         id: 'included',
@@ -391,7 +431,7 @@ export const productContent: ProductPageContent = {
         id: 'usage',
         name: 'Usage-Based',
         price: 'Pay as you go',
-        description: 'Transparent, predictable fees',
+        description: 'Pay only when you transact',
         features: [
           { name: 'Product Publishing', included: '$1,000' },
           { name: 'Subscription Fee', included: '0.25%' },
@@ -402,7 +442,6 @@ export const productContent: ProductPageContent = {
         ],
         cta: { text: 'Request Walkthrough', href: '/demo' },
         highlighted: true,
-        badge: 'Transparent',
       },
       {
         id: 'enterprise',
@@ -491,6 +530,100 @@ export const productContent: ProductPageContent = {
     secondaryCta: {
       text: 'Contact Us',
       href: '/contact',
+    },
+  },
+
+  audience: {
+    headline: 'Who is it for',
+    subheadline: 'Built for every participant in the ILS value chain',
+    cards: [
+      {
+        id: 'institutional',
+        title: 'Institutional Investors',
+        painPoint: 'Illiquid, opaque ILS exposure with limited secondary market options',
+        valueProposition: '24/7 liquidity, full transparency, and programmable positions',
+        icon: 'institutional',
+      },
+      {
+        id: 'reinsurer',
+        title: 'Reinsurers',
+        painPoint: 'Manual processes, slow settlement cycles, fragmented data',
+        valueProposition: 'Automated lifecycle management and instant settlement',
+        icon: 'reinsurer',
+      },
+      {
+        id: 'broker',
+        title: 'Brokers',
+        painPoint: 'Fragmented intermediaries and disconnected workflows',
+        valueProposition: 'Single platform with streamlined deal structuring',
+        icon: 'broker',
+      },
+      {
+        id: 'agent',
+        title: 'Agents',
+        painPoint: 'Limited access to capital and complex deal structuring',
+        valueProposition: 'Direct market access with programmable agreements',
+        icon: 'agent',
+      },
+    ],
+  },
+
+  team: {
+    headline: 'The Team',
+    vision: 'To create the infrastructure layer that makes institutional-grade reinsurance accessible, transparent, and programmable for the global market.',
+    mission: 'We build the technical and operational foundations that enable insurance-linked securities to function as true digital instruments — without compromising on governance, compliance, or institutional standards.',
+    members: [
+      {
+        id: 'member-1',
+        name: 'Team Member',
+        title: 'Co-Founder & CEO',
+        image: '',
+        previousCompanies: ['Previous Co'],
+        funFact: 'Add a fun fact here',
+      },
+      {
+        id: 'member-2',
+        name: 'Team Member',
+        title: 'Co-Founder & CTO',
+        image: '',
+        previousCompanies: ['Previous Co'],
+        funFact: 'Add a fun fact here',
+      },
+      {
+        id: 'member-3',
+        name: 'Team Member',
+        title: 'Head of Product',
+        image: '',
+        previousCompanies: ['Previous Co'],
+        funFact: 'Add a fun fact here',
+      },
+      {
+        id: 'member-4',
+        name: 'Team Member',
+        title: 'Head of Engineering',
+        image: '',
+        previousCompanies: ['Previous Co'],
+        funFact: 'Add a fun fact here',
+      },
+    ],
+  },
+
+  footer: {
+    company: {
+      name: 'Invest One AG',
+      legalEntity: 'Swiss Corporation (AG)',
+      registryInfo: 'CHE-XXX.XXX.XXX',
+      address: 'Löwenstrasse 29, 8001 Zürich, Switzerland',
+      email: 'info@ils-one.com',
+    },
+    links: {
+      impressum: '/impressum',
+      privacy: '/privacy',
+      legal: '/legal',
+    },
+    social: {
+      twitter: 'https://twitter.com/ilsone',
+      linkedin: 'https://linkedin.com/company/ils-one',
     },
   },
 };

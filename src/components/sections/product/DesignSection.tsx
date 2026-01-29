@@ -12,8 +12,8 @@ export function DesignSection({ content }: DesignSectionProps) {
   return (
     <section id="design" className="section-padding bg-dark-900">
       <div className="container-wide">
-        {/* Section header */}
-        <div className="max-w-3xl mb-20">
+        {/* Section header - centered */}
+        <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-50 mb-6">
             <TextSplitReveal splitBy="words" staggerAmount={0.05}>
               {content.headline}

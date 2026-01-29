@@ -2,8 +2,11 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'AppName Pro | The Most Powerful App We\'ve Ever Created',
-  description: 'Experience the next generation of productivity with AppName Pro. Lightning fast, beautifully designed, and incredibly powerful.',
+  title: 'ILS One | Platform for Programmable Reinsurance',
+  description: 'ILS One is a full lifecycle platform for Institutional Investors, Reinsurers, Brokers and Agents to transform insurance-linked securities into programmable on-chain instruments.',
+  icons: {
+    icon: '/Favicon.svg',
+  },
 };
 
 export default function RootLayout({

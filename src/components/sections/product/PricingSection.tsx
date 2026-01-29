@@ -6,9 +6,10 @@ import type { PricingContent } from '@/lib/types/content';
 
 interface PricingSectionProps {
   content: PricingContent;
+  onContactClick?: () => void;
 }
 
-export function PricingSection({ content }: PricingSectionProps) {
+export function PricingSection({ content, onContactClick }: PricingSectionProps) {
   return (
     <section id="pricing" className="section-padding bg-dark-900">
       <div className="container-narrow">
@@ -70,7 +71,7 @@ export function PricingSection({ content }: PricingSectionProps) {
               {/* CTAs */}
               <RevealOnScroll delay={0.6}>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Button href={content.cta.href} size="xl" variant="primary">
+                  <Button onClick={onContactClick} size="xl" variant="primary">
                     {content.cta.text}
                   </Button>
                   {content.secondaryCta && (

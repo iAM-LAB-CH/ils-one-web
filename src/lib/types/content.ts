@@ -14,10 +14,15 @@ export interface ProductCardContent {
 }
 
 // Trust Banner
+export interface TrustInstitution {
+  name: string;
+  logo?: string; // Path to logo SVG/PNG
+}
+
 export interface TrustBannerContent {
   headline: string;
   subheadline?: string;
-  institutions: string[];
+  institutions: TrustInstitution[];
 }
 
 // Hero Section
@@ -45,6 +50,34 @@ export interface NavItem {
   id: string;
   label: string;
   href: string;
+}
+
+// New navigation with dropdowns (Ondo-style)
+export interface NavDropdownItem {
+  id: string;
+  label: string;
+  href: string;
+  description?: string;
+}
+
+export interface NavCategory {
+  id: string;
+  label: string;
+  items?: NavDropdownItem[];
+  href?: string; // Direct link if no dropdown
+  action?: 'modal'; // Special action like opening a modal
+}
+
+export interface MainNavigation {
+  logo: {
+    text: string;
+    href: string;
+  };
+  categories: NavCategory[];
+  cta: {
+    text: string;
+    href: string;
+  };
 }
 
 // Feature Highlight
@@ -161,7 +194,9 @@ export interface PerformanceStat {
 export interface ComparisonBar {
   label: string;
   ourValue: number;
+  ourDisplay?: string;
   competitorValue: number;
+  competitorDisplay?: string;
   unit: string;
 }
 
@@ -266,10 +301,64 @@ export interface CTAFooterContent {
   backgroundImage?: string;
 }
 
+// Audience Section (Who Is It For)
+export interface AudienceCard {
+  id: string;
+  title: string;
+  painPoint: string;
+  valueProposition: string;
+  icon?: string;
+}
+
+export interface AudienceContent {
+  headline: string;
+  subheadline?: string;
+  cards: AudienceCard[];
+}
+
+// Team Section
+export interface TeamMember {
+  id: string;
+  name: string;
+  title: string;
+  image: string;
+  previousCompanies?: string[];
+  funFact?: string;
+}
+
+export interface TeamContent {
+  headline: string;
+  vision: string;
+  mission: string;
+  members: TeamMember[];
+}
+
+// Footer Content
+export interface FooterContent {
+  company: {
+    name: string;
+    legalEntity: string;
+    registryInfo?: string;
+    address: string;
+    email: string;
+    phone?: string;
+  };
+  links: {
+    impressum: string;
+    privacy: string;
+    legal?: string;
+  };
+  social?: {
+    twitter?: string;
+    linkedin?: string;
+  };
+}
+
 // Complete Product Page Content
 export interface ProductPageContent {
   hero: HeroContent;
   navigation: NavItem[];
+  mainNavigation: MainNavigation;
   highlights: HighlightsContent;
   productViewer?: ProductViewerContent;
   design: DesignContent;
@@ -281,4 +370,7 @@ export interface ProductPageContent {
   specs: SpecsContent;
   pricing: PricingContent;
   ctaFooter: CTAFooterContent;
+  audience?: AudienceContent;
+  team?: TeamContent;
+  footer?: FooterContent;
 }

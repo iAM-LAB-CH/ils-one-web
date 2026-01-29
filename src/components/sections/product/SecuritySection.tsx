@@ -172,12 +172,12 @@ export function SecuritySection({ content }: SecuritySectionProps) {
           )}
         </div>
 
-        {/* Security credentials grid */}
-        <StaggerReveal stagger={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Security credentials grid - auto-rows ensures equal height */}
+        <StaggerReveal stagger={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
           {content.credentials.map((credential) => (
             <div
               key={credential.id}
-              className="group relative p-6 rounded-2xl bg-dark-900 border border-white/[0.08] hover:border-white/[0.15] transition-all duration-300 hover:bg-dark-850"
+              className="group relative p-6 rounded-2xl bg-dark-900 border border-white/[0.08] hover:border-white/[0.15] transition-all duration-300 hover:bg-dark-850 flex flex-col"
             >
               {/* Badge */}
               {credential.badge && (
@@ -199,7 +199,7 @@ export function SecuritySection({ content }: SecuritySectionProps) {
               </h3>
 
               {/* Description */}
-              <p className="text-dark-400 leading-relaxed mb-4">
+              <p className="text-dark-400 leading-relaxed flex-grow">
                 {credential.description}
               </p>
 
@@ -209,7 +209,7 @@ export function SecuritySection({ content }: SecuritySectionProps) {
                   href={credential.link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-accent-500 hover:text-accent-400 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm text-accent-500 hover:text-accent-400 transition-colors mt-4"
                 >
                   {credential.link.text}
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>

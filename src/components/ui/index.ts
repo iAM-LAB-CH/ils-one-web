@@ -12,3 +12,4 @@ export { AccordionItem } from './AccordionItem';
 export { VideoPlayer } from './VideoPlayer';
 export { ProductCard } from './ProductCard';
 export type { ProductCardData } from './ProductCard';
+export { ContactModal } from './ContactModal';

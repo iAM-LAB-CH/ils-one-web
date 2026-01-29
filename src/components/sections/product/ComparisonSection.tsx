@@ -6,9 +6,10 @@ import type { ComparisonContent } from '@/lib/types/content';
 
 interface ComparisonSectionProps {
   content: ComparisonContent;
+  onContactClick?: () => void;
 }
 
-export function ComparisonSection({ content }: ComparisonSectionProps) {
+export function ComparisonSection({ content, onContactClick }: ComparisonSectionProps) {
   return (
     <section id="compare" className="section-padding bg-dark-900">
       <div className="container-wide">
@@ -29,7 +30,7 @@ export function ComparisonSection({ content }: ComparisonSectionProps) {
         </div>
 
         {/* Comparison table */}
-        <ComparisonTable tiers={content.tiers} />
+        <ComparisonTable tiers={content.tiers} onContactClick={onContactClick} />
       </div>
     </section>
   );

@@ -6,9 +6,10 @@ import type { CTAFooterContent } from '@/lib/types/content';
 
 interface CTAFooterSectionProps {
   content: CTAFooterContent;
+  onContactClick?: () => void;
 }
 
-export function CTAFooterSection({ content }: CTAFooterSectionProps) {
+export function CTAFooterSection({ content, onContactClick }: CTAFooterSectionProps) {
   return (
     <section className="relative py-32 md:py-40 overflow-hidden">
       {/* Background */}
@@ -47,7 +48,7 @@ export function CTAFooterSection({ content }: CTAFooterSectionProps) {
         {/* CTAs */}
         <RevealOnScroll delay={0.5}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href={content.cta.href} size="xl" variant="primary">
+            <Button onClick={onContactClick} size="xl" variant="primary">
               {content.cta.text}
             </Button>
             {content.secondaryCta && (
@@ -66,7 +67,7 @@ export function CTAFooterSection({ content }: CTAFooterSectionProps) {
         <RevealOnScroll delay={0.7}>
           <div className="mt-20 pt-8 border-t border-dark-800">
             <p className="text-sm text-dark-500">
-              © 2026 AppName Pro. All rights reserved.
+              © {new Date().getFullYear()} Invest One AG. All rights reserved.
             </p>
           </div>
         </RevealOnScroll>

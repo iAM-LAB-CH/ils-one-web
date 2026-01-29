@@ -74,12 +74,15 @@ export function HighlightsSection({ content }: HighlightsSectionProps) {
     }
   }, [shouldShowVideo, activeTab]);
 
+  // Make configuration animation slightly smaller
+  const isConfiguration = activeTab === 'configuration';
+  
   return (
     <section id="highlights" className="section-padding">
       <div className="container-wide">
-        {/* Section header - Apple style centered */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
-          <h2 className="text-dark-50 mb-5">
+        {/* Section header - Apple style centered - reduced spacing */}
+        <div className="text-center max-w-4xl mx-auto mb-10">
+          <h2 className="text-dark-50 mb-4">
             <TextSplitReveal splitBy="words" staggerAmount={0.05}>
               {content.headline}
             </TextSplitReveal>
@@ -93,9 +96,9 @@ export function HighlightsSection({ content }: HighlightsSectionProps) {
           )}
         </div>
 
-        {/* Tabs - Apple style pill navigation - scrollable on mobile */}
+        {/* Tabs - Apple style pill navigation - minimal margin */}
         <RevealOnScroll delay={0.3}>
-          <div className="flex justify-center mb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex justify-center mb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
             <div className="overflow-x-auto scrollbar-hide max-w-full">
               <TabNav
                 tabs={content.tabs.map((tab) => ({
@@ -112,12 +115,14 @@ export function HighlightsSection({ content }: HighlightsSectionProps) {
           </div>
         </RevealOnScroll>
 
-        {/* Lottie Animation Display - Clean Apple style */}
+        {/* Animation Display - Clean Apple style - reduced spacing */}
         {activeTabData && (
           <RevealOnScroll delay={0.4}>
             <div className="flex flex-col items-center">
               {/* Animation Container - Video on mobile, Lottie on desktop */}
-              <div className="relative w-full max-w-5xl aspect-[16/9] rounded-3xl border border-white/[0.04] overflow-hidden mb-0">
+              <div className={`relative w-full rounded-3xl border border-white/[0.04] overflow-hidden mb-4 ${
+                isConfiguration ? 'max-w-4xl aspect-[16/9]' : 'max-w-5xl aspect-[16/9]'
+              }`}>
                 {shouldShowVideo ? (
                   // Video with bottom 32px cropped to hide watermark using clip-path
                   <video
@@ -152,11 +157,10 @@ export function HighlightsSection({ content }: HighlightsSectionProps) {
                   </div>
                 )}
               </div>
-              {/* Tab Title and Description - Apple style */}
-              <div className="text-center max-w-2xl">
-            
+              {/* Tab Title and Description - no margin */}
+              <div className="text-center max-w-2xl mt-0">
                 {activeTabData.features[0] && (
-                  <h3 className="text-xl leading-snug">
+                  <h3 className="text-lg md:text-xl leading-snug text-dark-300 mb-0">
                     {activeTabData.features[0].description}
                   </h3>
                 )}

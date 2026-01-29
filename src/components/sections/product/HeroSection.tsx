@@ -1,74 +1,69 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
-import { Button, Badge, ProductCard } from '@/components/ui';
+import { Button, ProductCard } from '@/components/ui';
 import { TextSplitReveal } from '@/components/animations';
-import type { HeroContent } from '@/lib/types/content';
+import type { HeroContent, TrustInstitution } from '@/lib/types/content';
 import { useReducedMotion } from '@/lib/hooks/useReducedMotion';
 
 interface HeroSectionProps {
   content: HeroContent;
+  onContactClick?: () => void;
 }
 
-// Company logo component with placeholder that shows company initial
-function CompanyLogo({ company }: { company: string }) {
-  const initial = company.charAt(0).toUpperCase();
+// Company logo component with actual logo or placeholder
+function CompanyLogo({ institution }: { institution: TrustInstitution }) {
+  return (
+    <div className="flex-shrink-0 flex items-center opacity-60 hover:opacity-90 transition-opacity duration-300">
+      {institution.logo ? (
+        /* Actual logo image - monochrome/grayscale filter applied */
+        <Image
+          src={institution.logo}
+          alt={institution.name}
+          width={120}
+          height={32}
+          className="h-6 sm:h-7 w-auto object-contain"
+          style={{ filter: 'grayscale(100%) brightness(0) invert(1)' }}
+        />
+      ) : (
+        /* Placeholder with company name */
+        <span className="text-sm sm:text-base font-medium text-white/80 whitespace-nowrap">
+          {institution.name}
+        </span>
+      )}
+    </div>
+  );
+}
+
+// Marquee component for infinite scroll animation using CSS
+function LogoMarquee({ institutions }: { institutions: TrustInstitution[] }) {
+  // Double the institutions array for seamless loop
+  const doubledInstitutions = [...institutions, ...institutions];
   
   return (
-    <div className="flex-shrink-0 flex items-center gap-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-      {/* Logo placeholder - circle with initial */}
-      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
-        <span className="text-sm sm:text-base font-bold text-white/80">{initial}</span>
-      </div>
-      {/* Company name */}
-      <span className="text-sm sm:text-base font-medium text-white/80 whitespace-nowrap">
-        {company}
-      </span>
-    </div>
-  );
-}
-
-// Marquee component for infinite scroll animation
-function LogoMarquee({ institutions }: { institutions: string[] }) {
-  const marqueeRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!marqueeRef.current) return;
-
-    const marquee = marqueeRef.current;
-    const content = marquee.querySelector('.marquee-content') as HTMLElement;
-    if (!content) return;
-
-    // Clone content for seamless loop
-    const clone = content.cloneNode(true) as HTMLElement;
-    marquee.appendChild(clone);
-
-    // Animate with GSAP - slower for better readability
-    const totalWidth = content.offsetWidth;
-    
-    gsap.to(marquee.children, {
-      x: -totalWidth,
-      duration: 40,
-      ease: "none",
-      repeat: -1,
-    });
-  }, []);
-
-  return (
     <div className="overflow-hidden">
-      <div ref={marqueeRef} className="flex">
-        <div className="marquee-content flex items-center gap-10 sm:gap-14 lg:gap-20 px-6 sm:px-8 lg:px-12">
-          {institutions.map((company, index) => (
-            <CompanyLogo key={`${company}-${index}`} company={company} />
-          ))}
-        </div>
+      <div 
+        className="flex animate-marquee"
+        style={{
+          animation: 'marquee 25s linear infinite',
+        }}
+      >
+        {doubledInstitutions.map((institution, index) => (
+          <div 
+            key={`${institution.name}-${index}`} 
+            className="flex-shrink-0 px-8 sm:px-10 lg:px-14"
+          >
+            <CompanyLogo institution={institution} />
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
-export function HeroSection({ content }: HeroSectionProps) {
+export function HeroSection({ content, onContactClick }: HeroSectionProps) {
   const containerRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -157,16 +152,16 @@ export function HeroSection({ content }: HeroSectionProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-[120px] pt-8 sm:pt-12 md:pt-16 lg:pt-[60px]">
+      <div className="relative z-10 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-[120px] pt-24">
         <div className="max-w-[1728px] mx-auto">
           {/* Hero Text */}
           <div ref={textRef} className="text-center mb-[48px]">
-            {/* Badge */}
+            {/* Badge - Plain text styling, not button-like */}
             {content.badge && (
-              <div className="hero-badge mb-6">
-                <Badge variant="accent" size="lg">
+              <div className="hero-badge mb-3">
+                <span className="text-[14px] font-medium text-accent-500 tracking-wide">
                   {content.badge}
-                </Badge>
+                </span>
               </div>
             )}
 
@@ -182,7 +177,7 @@ export function HeroSection({ content }: HeroSectionProps) {
             </h1>
 
             {/* Subheadline */}
-            <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-semibold text-dark-400 mb-8 max-w-4xl mx-auto tracking-[-0.02em] leading-[1.15]">
+            <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-semibold text-dark-400 mb-4 max-w-4xl mx-auto tracking-[-0.02em] leading-[1.15]">
               <TextSplitReveal
                 splitBy="words"
                 staggerAmount={0.04}
@@ -194,16 +189,22 @@ export function HeroSection({ content }: HeroSectionProps) {
 
             {/* Description */}
             {content.description && (
-              <p className="hero-description text-lg md:text-xl text-dark-500 max-w-2xl mx-auto mb-12 leading-[1.2] tracking-[-0.01em] whitespace-pre-line">
+              <p className="hero-description text-lg md:text-xl text-dark-500 max-w-2xl mx-auto mb-8 leading-[1.4] tracking-[-0.01em]">
                 {content.description}
               </p>
             )}
 
             {/* CTAs - z-index ensures they stay above product cards */}
             <div className="hero-ctas relative z-20 flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <Button href={content.primaryCta.href} size="lg" variant="primary">
+              {/* Primary CTA: Request Walkthrough - opens modal */}
+              <Button 
+                onClick={onContactClick}
+                size="lg" 
+                variant="primary"
+              >
                 {content.primaryCta.text}
               </Button>
+              {/* Secondary CTA: Launch App - external link */}
               {content.secondaryCta && (
                 <Button
                   href={content.secondaryCta.href}
