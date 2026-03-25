@@ -57,7 +57,7 @@ export function FooterSection({ ctaContent, footerContent, onContactClick }: Foo
               </Button>
               {ctaContent.secondaryCta && (
                 <Button
-                  href={ctaContent.secondaryCta.href}
+                  onClick={onContactClick}
                   size="xl"
                   variant="outline"
                 >

@@ -53,7 +53,7 @@ export function CTAFooterSection({ content, onContactClick }: CTAFooterSectionPr
             </Button>
             {content.secondaryCta && (
               <Button
-                href={content.secondaryCta.href}
+                onClick={onContactClick}
                 size="xl"
                 variant="outline"
               >
