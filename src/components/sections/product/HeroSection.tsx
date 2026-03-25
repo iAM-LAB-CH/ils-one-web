@@ -176,17 +176,6 @@ export function HeroSection({ content, onContactClick }: HeroSectionProps) {
               </TextSplitReveal>
             </h1>
 
-            {/* Subheadline */}
-            <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-semibold text-dark-400 mb-4 max-w-4xl mx-auto tracking-[-0.02em] leading-[1.15]">
-              <TextSplitReveal
-                splitBy="words"
-                staggerAmount={0.04}
-                delay={0.3}
-              >
-                {content.subheadline}
-              </TextSplitReveal>
-            </div>
-
             {/* Description */}
             {content.description && (
               <p className="hero-description text-lg md:text-xl text-dark-500 max-w-2xl mx-auto mb-8 leading-[1.4] tracking-[-0.01em]">

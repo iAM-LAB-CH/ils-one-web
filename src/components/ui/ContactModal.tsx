@@ -101,10 +101,6 @@ export function ContactModal({ isOpen, onClose, title = 'Schedule a Walkthrough'
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
               </svg>
             </a>
-
-            <p className="text-sm text-dark-500 text-center">
-              Opens Google Calendar in a new tab
-            </p>
           </div>
 
           {/* Divider */}
@@ -117,13 +113,13 @@ export function ContactModal({ isOpen, onClose, title = 'Schedule a Walkthrough'
           {/* Contact info */}
           <div className="flex justify-center">
             <a
-              href="mailto:info@ils-one.com"
+              href="mailto:info@iam-lab.ch"
               className="flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-dark-200 bg-dark-800 hover:bg-dark-700 border border-white/[0.08] rounded-full transition-colors"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
               </svg>
-              info@ils-one.com
+              info@iam-lab.ch
             </a>
           </div>
         </div>

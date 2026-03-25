@@ -29,7 +29,7 @@ export interface TrustBannerContent {
 export interface HeroContent {
   badge?: string;
   headline: string;
-  subheadline: string;
+  subheadline?: string;
   description?: string;
   primaryCta: {
     text: string;
@@ -267,25 +267,6 @@ export interface SpecsContent {
   categories: SpecCategory[];
 }
 
-// Pricing/CTA Section
-export interface PricingContent {
-  headline: string;
-  subheadline: string;
-  description?: string;
-  price: string;
-  period: string;
-  features: string[];
-  cta: {
-    text: string;
-    href: string;
-  };
-  secondaryCta?: {
-    text: string;
-    href: string;
-  };
-  guarantee?: string;
-}
-
 // CTA Footer
 export interface CTAFooterContent {
   headline: string;
@@ -368,7 +349,6 @@ export interface ProductPageContent {
   video?: VideoContent;
   comparison: ComparisonContent;
   specs: SpecsContent;
-  pricing: PricingContent;
   ctaFooter: CTAFooterContent;
   audience?: AudienceContent;
   team?: TeamContent;

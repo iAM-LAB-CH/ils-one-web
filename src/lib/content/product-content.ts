@@ -42,7 +42,6 @@ export const productContent: ProductPageContent = {
   hero: {
     badge: 'Institutional Platform. On-Chain.',
     headline: 'ILS One',
-    subheadline: 'Platform for Programmable Reinsurance',
     description: 'ILS One is a full lifecycle platform for Institutional Investors, Reinsurers, Brokers and Agents to transform insurance-linked securities into programmable on-chain instruments.',
     primaryCta: {
       text: 'Request Walkthrough',
@@ -127,9 +126,8 @@ export const productContent: ProductPageContent = {
     { id: 'security', label: 'Security', href: '#security' },
     { id: 'features', label: 'Platform', href: '#features' },
     { id: 'performance', label: 'Performance', href: '#performance' },
-    { id: 'compare', label: 'Pricing', href: '#compare' },
     { id: 'specs', label: 'FAQ', href: '#specs' },
-    { id: 'pricing', label: 'Pricing', href: '#pricing' },
+    { id: 'get-started', label: 'Get Started', href: '#get-started' },
   ],
 
   highlights: {
@@ -490,34 +488,11 @@ export const productContent: ProductPageContent = {
         title: 'Integration',
         icon: '',
         specs: [
-          { label: 'How long does setup take?', value: 'Basic setup can be completed in days. Custom integrations typically take 2-4 weeks depending on complexity.' },
-          { label: 'What systems can it integrate with?', value: 'ILS One provides APIs for integration with existing portfolio management, reporting, and compliance systems.' },
-          { label: 'Is there documentation?', value: 'Comprehensive documentation, API references, and integration guides are available for all users.' },
+          { label: 'How long does setup take?', value: 'You can start with ILS One as-is — the platform is production-ready out of the box. If you need changes to the logic, workflows, or integrations, we scope those together as part of a custom engagement.' },
+          { label: 'What systems can it integrate with?', value: 'ILS One runs on a modern tech stack and can interface with existing APIs for portfolio management, reporting, and compliance systems.' },
         ],
       },
     ],
-  },
-
-  pricing: {
-    headline: 'Ready to modernize your ILS operations?',
-    subheadline: 'See how programmable reinsurance works in practice',
-    description: 'Book a walkthrough and explore a live product setup.',
-    price: 'Custom',
-    period: '',
-    features: [
-      'Live product demonstration',
-      'Architecture deep-dive',
-      'Integration assessment',
-      'Custom pricing discussion',
-    ],
-    cta: {
-      text: 'Request Walkthrough',
-      href: '/demo',
-    },
-    secondaryCta: {
-      text: 'Read Documentation',
-      href: '/docs',
-    },
   },
 
   ctaFooter: {
@@ -538,15 +513,15 @@ export const productContent: ProductPageContent = {
     subheadline: 'Built for every participant in the ILS value chain',
     cards: [
       {
-        id: 'institutional',
-        title: 'Institutional Investors',
+        id: 'investor',
+        title: 'Capital Providers',
         painPoint: 'Illiquid, opaque ILS exposure with limited secondary market options',
         valueProposition: '24/7 liquidity, full transparency, and programmable positions',
         icon: 'institutional',
       },
       {
         id: 'reinsurer',
-        title: 'Reinsurers',
+        title: 'Risk Originators',
         painPoint: 'Manual processes, slow settlement cycles, fragmented data',
         valueProposition: 'Automated lifecycle management and instant settlement',
         icon: 'reinsurer',
@@ -558,54 +533,14 @@ export const productContent: ProductPageContent = {
         valueProposition: 'Single platform with streamlined deal structuring',
         icon: 'broker',
       },
-      {
-        id: 'agent',
-        title: 'Agents',
-        painPoint: 'Limited access to capital and complex deal structuring',
-        valueProposition: 'Direct market access with programmable agreements',
-        icon: 'agent',
-      },
     ],
   },
 
   team: {
-    headline: 'The Team',
+    headline: 'About ILS One',
     vision: 'To create the infrastructure layer that makes institutional-grade reinsurance accessible, transparent, and programmable for the global market.',
     mission: 'We build the technical and operational foundations that enable insurance-linked securities to function as true digital instruments — without compromising on governance, compliance, or institutional standards.',
-    members: [
-      {
-        id: 'member-1',
-        name: 'Team Member',
-        title: 'Co-Founder & CEO',
-        image: '',
-        previousCompanies: ['Previous Co'],
-        funFact: 'Add a fun fact here',
-      },
-      {
-        id: 'member-2',
-        name: 'Team Member',
-        title: 'Co-Founder & CTO',
-        image: '',
-        previousCompanies: ['Previous Co'],
-        funFact: 'Add a fun fact here',
-      },
-      {
-        id: 'member-3',
-        name: 'Team Member',
-        title: 'Head of Product',
-        image: '',
-        previousCompanies: ['Previous Co'],
-        funFact: 'Add a fun fact here',
-      },
-      {
-        id: 'member-4',
-        name: 'Team Member',
-        title: 'Head of Engineering',
-        image: '',
-        previousCompanies: ['Previous Co'],
-        funFact: 'Add a fun fact here',
-      },
-    ],
+    members: [],
   },
 
   footer: {

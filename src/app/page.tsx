@@ -9,7 +9,7 @@ import {
   DesignSection,
   SecuritySection,
   AudienceSection,
-  ComparisonSection,
+  EngagementSection,
   TeamSection,
   SpecsSection,
   FooterSection,
@@ -56,10 +56,10 @@ export default function Home() {
       {/* 7. Security Section */}
       <SecuritySection content={productContent.security} />
 
-      {/* 8. Pricing Comparison */}
-      <ComparisonSection content={productContent.comparison} onContactClick={handleContactClick} />
+      {/* 8. Get Started / Engagement */}
+      <EngagementSection onContactClick={handleContactClick} />
 
-      {/* 9. Team / Vision / Mission */}
+      {/* 10. Team / Vision / Mission */}
       {productContent.team && (
         <TeamSection content={productContent.team} />
       )}

@@ -6,7 +6,7 @@ export { FeaturesSection } from './FeaturesSection';
 export { PerformanceSection } from './PerformanceSection';
 export { ComparisonSection } from './ComparisonSection';
 export { SpecsSection } from './SpecsSection';
-export { PricingSection } from './PricingSection';
+export { EngagementSection } from './EngagementSection';
 export { CTAFooterSection } from './CTAFooterSection';
 export { StickyNavSection } from './StickyNavSection';
 export { AudienceSection } from './AudienceSection';
