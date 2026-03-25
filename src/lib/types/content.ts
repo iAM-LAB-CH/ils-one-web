@@ -330,7 +330,6 @@ export interface FooterContent {
     legal?: string;
   };
   social?: {
-    twitter?: string;
     linkedin?: string;
   };
 }

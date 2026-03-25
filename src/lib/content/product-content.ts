@@ -19,12 +19,9 @@ export const productContent: ProductPageContent = {
         ],
       },
       {
-        id: 'company',
-        label: 'Company',
-        items: [
-          { id: 'team', label: 'Team', href: '#team', description: 'Meet the people behind ILS One' },
-          { id: 'vision', label: 'Vision & Mission', href: '#team', description: 'Our long-term commitment' },
-        ],
+        id: 'about',
+        label: 'About',
+        href: '#team',
       },
       {
         id: 'contact',
@@ -187,6 +184,8 @@ export const productContent: ProductPageContent = {
         id: 'liquidity',
         label: 'Liquidity',
         icon: '',
+        lottieUrl: '/animations/highlights/liquidity.json',
+        videoUrl: '/animations/highlights/liquidity.mp4',
         features: [
           {
             id: 'liquidity-main',
@@ -545,11 +544,12 @@ export const productContent: ProductPageContent = {
 
   footer: {
     company: {
-      name: 'Invest One AG',
+      name: 'i.AM Innovation Lab AG',
       legalEntity: 'Swiss Corporation (AG)',
-      registryInfo: 'CHE-XXX.XXX.XXX',
+      registryInfo: 'CHE-217.197.805',
       address: 'Löwenstrasse 29, 8001 Zürich, Switzerland',
-      email: 'info@ils-one.com',
+      email: 'info@iam-lab.ch',
+      phone: '+41 78 205 76 85',
     },
     links: {
       impressum: '/impressum',
@@ -557,8 +557,7 @@ export const productContent: ProductPageContent = {
       legal: '/legal',
     },
     social: {
-      twitter: 'https://twitter.com/ilsone',
-      linkedin: 'https://linkedin.com/company/ils-one',
+      linkedin: 'https://www.linkedin.com/company/35664865',
     },
   },
 };

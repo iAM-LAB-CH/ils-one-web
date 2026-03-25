@@ -197,6 +197,8 @@ export function HeroSection({ content, onContactClick }: HeroSectionProps) {
               {content.secondaryCta && (
                 <Button
                   href={content.secondaryCta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   size="lg"
                   variant="ghost"
                 >

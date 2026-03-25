@@ -79,10 +79,10 @@ export default function Home() {
           ctaContent={productContent.ctaFooter} 
           footerContent={{
             company: {
-              name: 'Invest One AG',
+              name: 'i.AM Innovation Lab AG',
               legalEntity: 'Swiss Corporation (AG)',
               address: 'Löwenstrasse 29, 8001 Zürich, Switzerland',
-              email: 'info@ils-one.com',
+              email: 'info@iam-lab.ch',
             },
             links: {
               impressum: '/impressum',
