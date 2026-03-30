@@ -243,8 +243,8 @@ export function HeroSection({ content, onContactClick }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Trust Banner - Fixed at bottom with animated logos */}
-      {hasTrustBanner && (
+      {/* Trust Banner - Fixed at bottom with animated logos (hidden for now) */}
+      {false && hasTrustBanner && (
         <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-dark-950 via-dark-950/95 to-dark-950/80 backdrop-blur-md py-6 sm:py-8 lg:py-10 border-t border-white/[0.08]">
           <p className="text-center text-dark-300 text-xs sm:text-sm uppercase tracking-[0.15em] mb-5 sm:mb-6 font-medium">
             {content.trustBanner!.headline}
@@ -253,8 +253,8 @@ export function HeroSection({ content, onContactClick }: HeroSectionProps) {
         </div>
       )}
 
-      {/* Scroll indicator - Minimal (only show if no trust banner) */}
-      {!hasTrustBanner && (
+      {/* Scroll indicator - Minimal */}
+      {(
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
           <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-dark-600 to-transparent" />
         </div>

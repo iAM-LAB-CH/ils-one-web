@@ -76,15 +76,7 @@ export function EngagementSection({ onContactClick }: EngagementSectionProps) {
           </div>
         </RevealOnScroll>
 
-        {/* Social Proof */}
-        <RevealOnScroll delay={0.3}>
-          <p className="text-center text-dark-500 text-sm md:text-base tracking-wide mt-12 ">
-            Already in production with{' '}
-            <span className="text-dark-300">Schroders</span>,{' '}
-            <span className="text-dark-300">Hannover Re</span>, and{' '}
-            <span className="text-dark-300">Aon</span>.
-          </p>
-        </RevealOnScroll>
+        
       </div>
     </section>
   );
