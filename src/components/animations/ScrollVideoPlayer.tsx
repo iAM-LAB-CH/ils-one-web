@@ -92,7 +92,7 @@ export function ScrollVideoPlayer({
           className={className}
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
         />
       </div>
     </div>

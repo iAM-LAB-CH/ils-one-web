@@ -17,11 +17,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" 
-          rel="stylesheet" 
+        <link
+          rel="preload"
+          href="/fonts/PPMori-Regular.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/PPMori-SemiBold.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
         />
       </head>
       <body className="min-h-screen bg-dark-950 text-dark-100 antialiased">

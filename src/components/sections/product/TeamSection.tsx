@@ -36,7 +36,7 @@ export function TeamSection({ content }: TeamSectionProps) {
               className="cursor-pointer brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               <Image
-                src="/images/logos/i.AM_Logo_Logo Black.png"
+                src="/images/logos/i.AM_Logo_Logo Black.webp"
                 alt="i.AM Lab"
                 width={180}
                 height={72}
@@ -50,7 +50,7 @@ export function TeamSection({ content }: TeamSectionProps) {
               className="cursor-pointer brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
               <Image
-                src="/images/logos/QSense-Logo.png"
+                src="/images/logos/QSense-Logo.webp"
                 alt="QSense"
                 width={180}
                 height={72}

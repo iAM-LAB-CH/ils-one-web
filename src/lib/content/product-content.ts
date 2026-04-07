@@ -32,21 +32,21 @@ export const productContent: ProductPageContent = {
     ],
     cta: {
       text: 'Launch App',
-      href: 'https://ils.dev.iam-lab.ch',
+      href: 'https://app.ils-one.ch',
     },
   },
 
   hero: {
     badge: 'Institutional Platform. On-Chain.',
     headline: 'ILS One',
-    description: 'ILS One is a full lifecycle platform for Institutional Investors, Reinsurers, Brokers and Agents to transform insurance-linked securities into programmable on-chain instruments.',
+    description: 'ILS One is a full lifecycle platform for Institutional Investors, Reinsurers, Brokers and Agents to launch insurance-linked securities as programmable on-chain instruments.',
     primaryCta: {
       text: 'Request Walkthrough',
       href: '#contact',
     },
     secondaryCta: {
       text: 'Launch App',
-      href: 'https://ils.dev.iam-lab.ch',
+      href: 'https://app.ils-one.ch',
     },
     productCards: [
       {
@@ -107,11 +107,11 @@ export const productContent: ProductPageContent = {
       subheadline: 'ILS One powers on-chain insurance-linked securities for leading asset managers, reinsurers and service providers',
       institutions: [
         { name: 'Hannover Re', logo: '/images/logos/HannoverRe.svg' },
-        { name: 'Schroders', logo: '/images/logos/Schroders.png' },
-        { name: 'Aon', logo: '/images/logos/AON.png' },
+        { name: 'Schroders', logo: '/images/logos/Schroders.webp' },
+        { name: 'Aon', logo: '/images/logos/AON.webp' },
         { name: 'Hannover Re', logo: '/images/logos/HannoverRe.svg' },
-        { name: 'Schroders', logo: '/images/logos/Schroders.png' },
-        { name: 'Aon', logo: '/images/logos/AON.png' },
+        { name: 'Schroders', logo: '/images/logos/Schroders.webp' },
+        { name: 'Aon', logo: '/images/logos/AON.webp' },
       ],
     },
   },
@@ -207,19 +207,19 @@ export const productContent: ProductPageContent = {
       {
         title: 'Smart-Contract Templates',
         description: 'Create legally aligned agreements through guided click-through templates and deploy them on-chain with built-in controls.',
-        image: '/images/infrastructure/sc-templates.png',
+        image: '/images/infrastructure/sc-templates.webp',
         imageAlt: 'Smart contract templates interface',
       },
       {
         title: 'Institutional DeFi, selectively applied',
         description: 'Integrate with Ethereum-based blockchains (EVM-compatible networks), stablecoins and institutional yield strategies — where they add real value.',
-        image: '/images/infrastructure/yield.png',
+        image: '/images/infrastructure/yield.webp',
         imageAlt: 'DeFi integrations',
       },
       {
         title: 'Auditability by default',
         description: 'Every action, approval and cashflow is traceable, timestamped and verifiable on-chain.',
-        image: '/images/infrastructure/activity3.png',
+        image: '/images/infrastructure/activity3.webp',
         imageAlt: 'Audit trail visualization',
       },
     ],
@@ -281,7 +281,7 @@ export const productContent: ProductPageContent = {
         headline: 'Institutional Marketplace',
         subheadline: 'Trade ILS positions without breaking structure',
         description: 'Enable controlled secondary trading of ILS agreements while preserving governance, compliance and transparency.',
-        image: '/images/platform/marketplace.png',
+        image: '/images/platform/marketplace.webp',
         imageAlt: 'Marketplace interface',
         highlights: [
           'Secondary market access',
@@ -296,7 +296,7 @@ export const productContent: ProductPageContent = {
         headline: 'Institutional Transactions',
         subheadline: 'Secure every transfer through multi-signature control',
         description: 'Self-custodial, role-based wallets designed for institutional workflows — not retail crypto UX.',
-        image: '/images/platform/institutional-tx.png',
+        image: '/images/platform/institutional-tx.webp',
         imageAlt: 'Transaction management interface',
         highlights: [
           'Regulator-ready approvals',
@@ -311,7 +311,7 @@ export const productContent: ProductPageContent = {
         headline: 'Product Configurator',
         subheadline: 'Build deals from click-through templates',
         description: 'Turn legal agreements into executable smart contracts. Define triggers, roles, termination logic, run-off mechanics and settlement rules — without bespoke development.',
-        image: '/images/platform/product-config.png',
+        image: '/images/platform/product-config.webp',
         imageAlt: 'Product configurator interface',
         highlights: [
           'Template-based deal creation',
@@ -326,7 +326,7 @@ export const productContent: ProductPageContent = {
         headline: 'Role-Based Interactions',
         subheadline: 'Pre-configured actions by role',
         description: 'Assign and enforce who can do what — directly at protocol level.',
-        image: '/images/platform/roles.png',
+        image: '/images/platform/roles.webp',
         imageAlt: 'Role management interface',
         highlights: [
           'Role-guarded actions',
@@ -422,7 +422,7 @@ export const productContent: ProductPageContent = {
           { name: 'Role-Based Permissions', included: true },
           { name: 'On-Chain Audit Trail', included: true },
         ],
-        cta: { text: 'Get Started', href: 'https://ils.dev.iam-lab.ch' },
+        cta: { text: 'Get Started', href: 'https://app.ils-one.ch' },
       },
       {
         id: 'usage',

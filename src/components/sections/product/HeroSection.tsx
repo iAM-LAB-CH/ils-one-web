@@ -141,10 +141,13 @@ export function HeroSection({ content, onContactClick }: HeroSectionProps) {
     >
       {/* Background - Hero image with overlay */}
       <div className="absolute inset-0">
-        {/* Background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat pt-4"
-          style={{ backgroundImage: 'url(/images/hero/earth-hurricane.png)' }}
+        <Image
+          src="/images/hero/earth-hurricane.webp"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
         />
         
         {/* Bottom gradient fade to dark */}

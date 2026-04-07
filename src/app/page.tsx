@@ -1,22 +1,24 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import {
   HeroSection,
-  HighlightsSection,
-  FeaturesSection,
-  PerformanceSection,
-  DesignSection,
-  SecuritySection,
-  AudienceSection,
-  EngagementSection,
-  TeamSection,
-  SpecsSection,
-  FooterSection,
   StickyNavSection,
 } from '@/components/sections/product';
-import { ContactModal } from '@/components/ui';
 import { productContent } from '@/lib/content/product-content';
+
+const AudienceSection = dynamic(() => import('@/components/sections/product/AudienceSection').then(m => ({ default: m.AudienceSection })));
+const HighlightsSection = dynamic(() => import('@/components/sections/product/HighlightsSection').then(m => ({ default: m.HighlightsSection })));
+const FeaturesSection = dynamic(() => import('@/components/sections/product/FeaturesSection').then(m => ({ default: m.FeaturesSection })));
+const PerformanceSection = dynamic(() => import('@/components/sections/product/PerformanceSection').then(m => ({ default: m.PerformanceSection })));
+const DesignSection = dynamic(() => import('@/components/sections/product/DesignSection').then(m => ({ default: m.DesignSection })));
+const SecuritySection = dynamic(() => import('@/components/sections/product/SecuritySection').then(m => ({ default: m.SecuritySection })));
+const EngagementSection = dynamic(() => import('@/components/sections/product/EngagementSection').then(m => ({ default: m.EngagementSection })));
+const TeamSection = dynamic(() => import('@/components/sections/product/TeamSection').then(m => ({ default: m.TeamSection })));
+const SpecsSection = dynamic(() => import('@/components/sections/product/SpecsSection').then(m => ({ default: m.SpecsSection })));
+const FooterSection = dynamic(() => import('@/components/sections/product/FooterSection').then(m => ({ default: m.FooterSection })));
+const ContactModal = dynamic(() => import('@/components/ui/ContactModal').then(m => ({ default: m.ContactModal })), { ssr: false });
 
 export default function Home() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
