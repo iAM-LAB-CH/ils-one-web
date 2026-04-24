@@ -393,14 +393,6 @@ export const productContent: ProductPageContent = {
         competitorDisplay: '~10%',
         unit: 'of transaction',
       },
-      {
-        label: 'Audit Readiness',
-        ourValue: 100,
-        ourDisplay: '100%',
-        competitorValue: 52,
-        competitorDisplay: '52%',
-        unit: 'traceability',
-      },
     ],
   },
 
